@@ -10,4 +10,4 @@ $$
 \sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}
 $$
 
-And here is an inline equation: \( E = mc^2 \).
+And here is an inline equation: $$E = mc^2$$.
