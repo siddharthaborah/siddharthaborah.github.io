@@ -1,0 +1,29 @@
+title: Siddhartha Borah
+description: "Siddhartha Borah's personal website"
+baseurl: ""
+url: ""
+
+# Build settings
+markdown: kramdown
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+collections:
+  essays:
+    output: true
+    permalink: /essay/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /post/:title/

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On DeepSeek and Export Controls</title>
+  <meta name="description" content="Siddhartha Borah's personal website">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script>
+    // Set initial theme based on user preference or OS preference before page load to prevent flash
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="header">
+      <div class="container">
+        <a href="/" class="header-name-link">
+          <h1 class="header-name">Siddhartha Borah</h1>
+        </a>
+        <div class="toggle-container">
+          <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <label for="theme-toggle" class="theme-toggle-label"></label>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <div class="container">
+        <h1 id="on-deepseek-and-export-controls">On DeepSeek and Export Controls</h1>
+
+<p>Content goes here…</p>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      
+      // Set initial checkbox state
+      if (root.getAttribute('data-theme') === 'dark') {
+        toggle.checked = true;
+      }
+
+      toggle.addEventListener('change', (e) => {
+        const newTheme = e.target.checked ? 'dark' : 'light';
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+    });
+  </script>
+</body>
+</html>

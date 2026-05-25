@@ -1,0 +1,78 @@
+---
+layout: default
+title: Dario Amodei
+---
+
+<section>
+  {% capture about_text %}{% include about.md %}{% endcapture %}
+  {{ about_text | markdownify }}
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <ul class="item-list">
+    {% for project in site.data.projects %}
+    <li>
+      <div><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></div>
+      <div class="item-meta">({{ project.year }}) - {{ project.description }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Essays</h2>
+  <ul class="item-list">
+    {% for essay in site.essays %}
+    <li>
+      <div><a href="{{ essay.url | relative_url }}">{{ essay.title }}</a></div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Short posts</h2>
+  <ul class="item-list">
+    {% for post in site.posts reversed %}
+    <li>
+      <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Research</h2>
+  <ul class="item-list">
+    {% for item in site.data.research %}
+    <li>
+      <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Op-eds</h2>
+  <ul class="item-list">
+    {% for item in site.data.op_eds %}
+    <li>
+      <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
+      <div class="item-meta">({{ item.publication }}, {{ item.year }})</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section>
+  <h2>Interviews</h2>
+  <ul class="item-list">
+    {% for item in site.data.interviews %}
+    <li>
+      <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
+      <div class="item-meta">({{ item.year }})</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

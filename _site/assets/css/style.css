@@ -1,0 +1,195 @@
+:root {
+  --font-family: Georgia, 'Times New Roman', Times, serif;
+  
+  /* Light mode colors */
+  --bg-color-light: #f7f7f7;
+  --text-color-light: #222222;
+  --link-color-light: #0055aa;
+  --link-hover-light: #003366;
+  --secondary-text-light: #666666;
+
+  /* Dark mode colors */
+  --bg-color-dark: #1e1e1e;
+  --text-color-dark: #e8e8e8;
+  --link-color-dark: #7ec0ee;
+  --link-hover-dark: #99d6ff;
+  --secondary-text-dark: #a0a0a0;
+  
+  /* Default active variables (mapped via data-theme) */
+  --bg-color: var(--bg-color-light);
+  --text-color: var(--text-color-light);
+  --link-color: var(--link-color-light);
+  --link-hover: var(--link-hover-light);
+  --secondary-text: var(--secondary-text-light);
+}
+
+[data-theme="dark"] {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --link-color: var(--link-color-dark);
+  --link-hover: var(--link-hover-dark);
+  --secondary-text: var(--secondary-text-dark);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header & Toggle */
+.header {
+  padding: 40px 0;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-name-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.header-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Theme Toggle */
+.toggle-container {
+  position: relative;
+}
+.theme-toggle {
+  opacity: 0;
+  position: absolute;
+}
+.theme-toggle-label {
+  display: block;
+  width: 44px;
+  height: 24px;
+  background-color: var(--text-color);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+.theme-toggle-label::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-color);
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.theme-toggle:checked + .theme-toggle-label::after {
+  transform: translateX(20px);
+}
+
+/* Typography & Content */
+p {
+  margin-bottom: 1.2rem;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--link-hover);
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Lists */
+.item-list {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+.item-list li {
+  margin-bottom: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.item-list li::before {
+  content: "•";
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  position: absolute;
+}
+.item-list a {
+  text-decoration: none;
+}
+.item-list a:hover {
+  text-decoration: underline;
+}
+
+.item-meta {
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+  margin-top: 2px;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Ensure long links or words don't overflow on small screens */
+p, li {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .header {
+    padding: 20px 0; /* Less padding on mobile */
+  }
+  .header .container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .item-list li {
+    margin-bottom: 1.2rem; /* Give touch targets more breathing room */
+  }
+}
