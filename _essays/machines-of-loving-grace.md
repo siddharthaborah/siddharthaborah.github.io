@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: essay
 title: "Machines of Loving Grace"
 ---
 

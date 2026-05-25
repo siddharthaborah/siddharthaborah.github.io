@@ -1,7 +1,7 @@
 title: Siddhartha Borah
 description: "Siddhartha Borah's personal website"
 baseurl: ""
-url: ""
+url: "https://siddharthaborah.github.io"
 
 # Build settings
 markdown: kramdown
@@ -15,6 +15,11 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
 
 collections:
   essays:

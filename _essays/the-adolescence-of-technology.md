@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: essay
 title: "The Adolescence of Technology"
 ---
 
