@@ -9,18 +9,6 @@ title: Siddhartha Borah
 </section>
 
 <section>
-  <h2>Projects</h2>
-  <ul class="item-list">
-    {% for project in site.data.projects %}
-    <li>
-      <div><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></div>
-      <div class="item-meta">({{ project.year }}) - {{ project.description }}</div>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-
-<section>
   <h2>Essays</h2>
   <ul class="item-list">
     {% for essay in site.essays %}
@@ -53,6 +41,19 @@ title: Siddhartha Borah
     {% endfor %}
   </ul>
 </section>
+
+<section>
+  <h2>Projects</h2>
+  <ul class="item-list">
+    {% for project in site.data.projects %}
+    <li>
+      <div><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></div>
+      <div class="item-meta">({{ project.year }}) - {{ project.description }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
 
 <!-- <section>
   <h2>Research</h2>
