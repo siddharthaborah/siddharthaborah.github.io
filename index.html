@@ -25,7 +25,13 @@ title: Siddhartha Borah
   <ul class="item-list">
     {% for essay in site.essays %}
     <li>
-      <div><a href="{{ essay.url | relative_url }}">{{ essay.title }}</a></div>
+      <div>
+        {% if essay.pdf_url %}
+        <a href="{{ essay.pdf_url }}" target="_blank">{{ essay.title }}</a>
+        {% else %}
+        <a href="{{ essay.url | relative_url }}">{{ essay.title }}</a>
+        {% endif %}
+      </div>
     </li>
     {% endfor %}
   </ul>
@@ -36,7 +42,13 @@ title: Siddhartha Borah
   <ul class="item-list">
     {% for post in site.posts reversed %}
     <li>
-      <div><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
+      <div>
+        {% if post.pdf_url %}
+        <a href="{{ post.pdf_url }}" target="_blank">{{ post.title }}</a>
+        {% else %}
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        {% endif %}
+      </div>
     </li>
     {% endfor %}
   </ul>
