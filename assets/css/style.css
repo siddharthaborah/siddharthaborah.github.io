@@ -39,6 +39,20 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-main {
+  flex: 1;
+}
+
 body {
   font-family: var(--font-family);
   background-color: var(--bg-color);

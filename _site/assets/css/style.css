@@ -4,16 +4,18 @@
   /* Light mode colors */
   --bg-color-light: #f7f7f7;
   --text-color-light: #222222;
-  --link-color-light: #0055aa;
-  --link-hover-light: #003366;
+  --link-color-light: #222222;
+  --link-hover-light: #000000;
   --secondary-text-light: #666666;
+  --border-color-light: #dddddd;
 
   /* Dark mode colors */
-  --bg-color-dark: #1e1e1e;
-  --text-color-dark: #e8e8e8;
-  --link-color-dark: #7ec0ee;
-  --link-hover-dark: #99d6ff;
+  --bg-color-dark: #222222;
+  --text-color-dark: #f0f0f0;
+  --link-color-dark: #f0f0f0;
+  --link-hover-dark: #ffffff;
   --secondary-text-dark: #a0a0a0;
+  --border-color-dark: #444444;
   
   /* Default active variables (mapped via data-theme) */
   --bg-color: var(--bg-color-light);
@@ -35,6 +37,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-main {
+  flex: 1;
 }
 
 body {
