@@ -11,7 +11,7 @@ title: Siddhartha Borah
 <section>
   <h2>Essays</h2>
   <ul class="item-list">
-    {% for essay in site.essays %}
+    {% for essay in site.essays reversed %}
     <li>
       <div>
         {% if essay.pdf_url %}
@@ -28,7 +28,7 @@ title: Siddhartha Borah
 <section>
   <h2>Short posts</h2>
   <ul class="item-list">
-    {% for post in site.posts reversed %}
+    {% for post in site.posts %}
     <li>
       <div>
         {% if post.pdf_url %}
@@ -45,7 +45,7 @@ title: Siddhartha Borah
 <section>
   <h2>Projects</h2>
   <ul class="item-list">
-    {% for project in site.data.projects %}
+    {% for project in site.data.projects reversed %}
     <li>
       <div><a href="{{ project.url }}" target="_blank">{{ project.title }}</a></div>
       <div class="item-meta">({{ project.year }}) - {{ project.description }}</div>
@@ -58,7 +58,7 @@ title: Siddhartha Borah
 <!-- <section>
   <h2>Research</h2>
   <ul class="item-list">
-    {% for item in site.data.research %}
+    {% for item in site.data.research reversed %}
     <li>
       <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
     </li>
@@ -69,7 +69,7 @@ title: Siddhartha Borah
 <!-- <section>
   <h2>Op-eds</h2>
   <ul class="item-list">
-    {% for item in site.data.op_eds %}
+    {% for item in site.data.op_eds reversed %}
     <li>
       <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
       <div class="item-meta">({{ item.publication }}, {{ item.year }})</div>
@@ -81,7 +81,7 @@ title: Siddhartha Borah
 <section>
   <h2>Interviews</h2>
   <ul class="item-list">
-    {% for item in site.data.interviews %}
+    {% for item in site.data.interviews reversed %}
     <li>
       <div><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></div>
       <div class="item-meta">({{ item.year }})</div>
