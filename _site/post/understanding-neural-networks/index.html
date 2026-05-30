@@ -126,6 +126,22 @@ $$</div>
         root.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
       });
+
+      // Add tooltips to footnote links
+      const footnoteLinks = document.querySelectorAll('sup a.footnote, a.footnote');
+      footnoteLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const targetId = href.substring(1);
+          const targetFootnote = document.getElementById(targetId);
+          if (targetFootnote) {
+            const clone = targetFootnote.cloneNode(true);
+            const reverseLink = clone.querySelector('.reversefootnote');
+            if (reverseLink) reverseLink.remove();
+            link.setAttribute('title', clone.textContent.trim());
+          }
+        }
+      });
     });
   </script>
 </body>
