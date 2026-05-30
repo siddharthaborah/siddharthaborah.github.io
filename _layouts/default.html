@@ -43,9 +43,11 @@
           <h1 class="header-name">{{ site.title }}</h1>
         </a>
         <div class="header-controls" style="display: flex; align-items: center; gap: 15px;">
+          {% if page.url != '/' and page.url != '/index.html' %}
           <button id="toc-toggle" class="toc-toggle-btn" aria-label="Table of Contents" style="display: none;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
           </button>
+          {% endif %}
           <div class="toggle-container">
             <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
             <label for="theme-toggle" class="theme-toggle-label"></label>
@@ -70,6 +72,7 @@
     </footer>
   </div>
 
+  {% if page.url != '/' and page.url != '/index.html' %}
   <div id="toc-overlay" class="toc-overlay"></div>
   <aside id="toc-sidebar" class="toc-sidebar">
     <div class="toc-header">
@@ -80,6 +83,7 @@
     </div>
     <nav id="toc-nav" class="toc-nav"></nav>
   </aside>
+  {% endif %}
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
