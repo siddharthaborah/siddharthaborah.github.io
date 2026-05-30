@@ -11,8 +11,8 @@
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Understanding Neural Networks" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Here is a block equation representing the softmax function:" />
-<meta property="og:description" content="Here is a block equation representing the softmax function:" />
+<meta name="description" content="The core concept is to find a set of weights that minimizes a defined loss function. This relies heavily on the chain rule of calculus (which we use for backpropagation1). Backpropagation is an algorithm used to calculate the gradient of the loss function with respect to the neural network’s weights. &#8617;" />
+<meta property="og:description" content="The core concept is to find a set of weights that minimizes a defined loss function. This relies heavily on the chain rule of calculus (which we use for backpropagation1). Backpropagation is an algorithm used to calculate the gradient of the loss function with respect to the neural network’s weights. &#8617;" />
 <link rel="canonical" href="http://localhost:4000/post/understanding-neural-networks/" />
 <meta property="og:url" content="http://localhost:4000/post/understanding-neural-networks/" />
 <meta property="og:site_name" content="Siddhartha Borah" />
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Understanding Neural Networks" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-25T00:00:00+05:30","datePublished":"2026-05-25T00:00:00+05:30","description":"Here is a block equation representing the softmax function:","headline":"Understanding Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/post/understanding-neural-networks/"},"url":"http://localhost:4000/post/understanding-neural-networks/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-25T00:00:00+05:30","datePublished":"2026-05-25T00:00:00+05:30","description":"The core concept is to find a set of weights that minimizes a defined loss function. This relies heavily on the chain rule of calculus (which we use for backpropagation1). Backpropagation is an algorithm used to calculate the gradient of the loss function with respect to the neural network’s weights. &#8617;","headline":"Understanding Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/post/understanding-neural-networks/"},"url":"http://localhost:4000/post/understanding-neural-networks/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -77,13 +77,22 @@
 </div>
 
 <div class="post-content">
-  <p>Here is a block equation representing the softmax function:</p>
+  <p>The core concept is to find a set of weights that minimizes a defined loss function. This relies heavily on the chain rule of calculus (which we use for backpropagation<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>).</p>
+
+<p>Here is a block equation representing the softmax function:</p>
 
 <div class="kdmath">$$
 \sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}}
 $$</div>
 
 <p>And here is an inline equation: $E = mc^2$.</p>
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>Backpropagation is an algorithm used to calculate the gradient of the loss function with respect to the neural network’s weights. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
 
 </div>
 

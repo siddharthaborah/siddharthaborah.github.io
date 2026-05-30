@@ -190,6 +190,49 @@ p, li {
   word-wrap: break-word;
 }
 
+/* Footnotes styling */
+sup {
+  vertical-align: super;
+  font-size: 0.75em;
+  line-height: 0;
+}
+sup a.footnote, a.footnote {
+  background-color: var(--border-color);
+  color: var(--text-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 2px;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+sup a.footnote:hover, a.footnote:hover {
+  opacity: 0.8;
+  color: var(--text-color);
+}
+.footnotes {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.9rem;
+  color: var(--secondary-text);
+}
+.footnotes ol {
+  padding-left: 1.5rem;
+}
+.footnotes li {
+  margin-bottom: 0.5rem;
+}
+.footnotes p {
+  margin-bottom: 0;
+}
+.reversefootnote {
+  text-decoration: none;
+  margin-left: 5px;
+  font-family: sans-serif;
+}
+
 /* Mobile responsive */
 @media (max-width: 600px) {
   body {
