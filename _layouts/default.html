@@ -42,9 +42,14 @@
         <a href="{{ '/' | relative_url }}" class="header-name-link">
           <h1 class="header-name">{{ site.title }}</h1>
         </a>
-        <div class="toggle-container">
-          <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
-          <label for="theme-toggle" class="theme-toggle-label"></label>
+        <div class="header-controls" style="display: flex; align-items: center; gap: 15px;">
+          <button id="toc-toggle" class="toc-toggle-btn" aria-label="Table of Contents" style="display: none;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+          <div class="toggle-container">
+            <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+            <label for="theme-toggle" class="theme-toggle-label"></label>
+          </div>
         </div>
       </div>
     </header>
@@ -65,6 +70,17 @@
     </footer>
   </div>
 
+  <div id="toc-overlay" class="toc-overlay"></div>
+  <aside id="toc-sidebar" class="toc-sidebar">
+    <div class="toc-header">
+      <h2>Contents</h2>
+      <button id="toc-close" class="toc-close-btn" aria-label="Close Contents">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <nav id="toc-nav" class="toc-nav"></nav>
+  </aside>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const toggle = document.getElementById('theme-toggle');
@@ -80,6 +96,61 @@
         root.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
       });
+
+      // TOC Logic
+      const content = document.querySelector('.page-main .container');
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocSidebar = document.getElementById('toc-sidebar');
+      const tocOverlay = document.getElementById('toc-overlay');
+      const tocClose = document.getElementById('toc-close');
+      const tocNav = document.getElementById('toc-nav');
+
+      if (content && tocNav) {
+        const headings = content.querySelectorAll('h2, h3');
+        if (headings.length > 0) {
+          tocToggle.style.display = 'block'; // Show hamburger if there are headings
+          const ul = document.createElement('ul');
+          ul.className = 'toc-list';
+          headings.forEach((heading, index) => {
+            if (!heading.id) {
+              heading.id = 'heading-' + index;
+            }
+            const li = document.createElement('li');
+            li.className = 'toc-item toc-' + heading.tagName.toLowerCase();
+            const a = document.createElement('a');
+            a.href = '#' + heading.id;
+            a.textContent = heading.textContent;
+            li.appendChild(a);
+            ul.appendChild(li);
+          });
+          tocNav.appendChild(ul);
+        }
+      }
+
+      function openSidebar() {
+        tocSidebar.classList.add('open');
+        tocOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      }
+
+      function closeSidebar() {
+        tocSidebar.classList.remove('open');
+        tocOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if(tocToggle) tocToggle.addEventListener('click', openSidebar);
+      if(tocClose) tocClose.addEventListener('click', closeSidebar);
+      if(tocOverlay) tocOverlay.addEventListener('click', closeSidebar);
+      
+      // Close sidebar when clicking a link
+      if(tocNav) {
+        tocNav.addEventListener('click', (e) => {
+          if(e.target.tagName.toLowerCase() === 'a') {
+            closeSidebar();
+          }
+        });
+      }
     });
   </script>
 </body>
