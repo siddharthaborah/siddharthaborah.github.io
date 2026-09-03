@@ -3,3 +3,9 @@
   year: 2026
   description: "A clean, text-focused Jekyll portfolio template."
 
+- title: "Mathdeck Keyboard"
+  url: "https://github.com/siddharthaborah/mathdeck"
+  year: 2026
+  description: "A compact math keyboard for writing, copying, and inserting equations."
+
+
