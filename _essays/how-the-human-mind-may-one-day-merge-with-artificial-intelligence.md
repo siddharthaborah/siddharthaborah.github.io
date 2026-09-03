@@ -87,6 +87,7 @@ In the distant future, humans may possess abilities that seem unimaginable today
 
 The merger of the human mind with Artificial Intelligence represents one of the most fascinating possibilities of the future. Advances in brain-computer interfaces, neural implants, and AI systems are bringing this concept closer to reality. While the potential benefits include enhanced intelligence, improved health, and revolutionary forms of communication, significant ethical, security, and social challenges must also be addressed. Whether this future becomes a utopia or a source of new risks will depend on how humanity chooses to develop and govern these transformative technologies.
 
+
 [^1]: Harari, Yuval Noah. *Homo Deus: A Brief History of Tomorrow*. Harper, 2017.
 [^2]: Kurzweil, Ray. *The Singularity Is Near*. Viking, 2005.
 [^3]: Tegmark, Max. *Life 3.0: Being Human in the Age of Artificial Intelligence*. Knopf, 2017.
